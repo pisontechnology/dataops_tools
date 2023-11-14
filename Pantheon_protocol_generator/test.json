@@ -1,0 +1,170 @@
+{
+  "name": "test",
+  "parameters": [
+    "test"
+  ],
+  "active": true,
+  "classes": [
+    {
+      "class": "PMT",
+      "intervals": [
+        {
+          "durationInMillis": 3379,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 1996,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 2890,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 2529,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 1987,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 2488,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 1642,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        },
+        {
+          "durationInMillis": 2949,
+          "ledOptions": {
+            "enabled": false
+          }
+        },
+        {
+          "label": "STIM",
+          "durationInMillis": 500,
+          "ledOptions": {
+            "color": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            },
+            "intensity": 1,
+            "enabled": true
+          }
+        }
+      ],
+      "type": "REACTION_TIME"
+    }
+  ],
+  "randomClassOrder": true,
+  "preamble": " ",
+  "epilogue": " "
+}
