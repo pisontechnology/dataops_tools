@@ -10,4 +10,9 @@ This tool takes a csv and creates a json file that can then be pushed via the Pa
 
 There are two csv files that provide examples of how the csv should be formatted for different types of protocols 
 
+# Vulcan Protocol Generator
+This tool takes a csv and creates a json file that can be shared with NEOHUB once downloaded on a phone. It supported multiple json versions of the app.
+
+There is also an example csv file that can be reformatted to suit the needs of a new protocol.
+
 
