@@ -3,7 +3,7 @@
 ### Pantheon Protocol Generator Documentation
 
 #### Overview
-ThePantheon Protocol Generator is designed to convert CSV data into a structured JSON format suitable for specific protocols. It is tailored to handle two types of protocols:
+The Pantheon Protocol Generator is designed to convert CSV data into a structured JSON format suitable for specific protocols. It is tailored to handle two types of protocols:
 1. Activity based protocols
 2. Cognitive Test protocols
 
