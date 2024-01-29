@@ -1,54 +1,49 @@
-# dataops_tools
 
-### Pantheon Protocol Generator Documentation
+# Protocol Generator Tool Documentation
 
-#### Overview
-The Pantheon Protocol Generator is designed to convert CSV data into a structured JSON format suitable for specific protocols. It is tailored to handle two types of protocols:
-1. Activity based protocols
-2. Cognitive Test protocols
+## Overview
 
-The tool reads data from a CSV file, processes it according to the specified protocol type, and generates a JSON file with the structured data.
+The `protocol_generator` tool is designed to convert a CSV file into multiple JSON files for protocol management. Each JSON file represents a unique protocol with specific activities, durations, and instructions. This tool is particularly useful for applications requiring structured activity protocols.
 
-#### Features
-- **Customizable Protocol Types**: Handles Activity and Cognitive Test protocols.
-- **Dynamic Parameter Setting**: Allows setting various parameters such as protocol name, group, random class order, and device disconnection behavior.
-- **NaN Handling**: Converts NaN values in the CSV to empty strings in the JSON file.
-- **Flexible Input**: Can process different CSV structures based on the protocol type.
 
-#### Files
-- `protocol_generator.ipynb`: The Jupyter notebook containing the implementation of the protocol generator.
-- `cognitive_test_example.csv`: An example CSV file for the Cognitive Test Test Protocol. This creates a 30 second SRT.
-- `activity_example.csv`: An example CSV file for the Activity Protocol. This creates a protocol for gesture primitives.
+## How to Use
 
-#### Usage
-1. **Setting Up**: 
-   - Open `protocol_generator.ipynb` in a Jupyter notebook environment.
-   - Ensure that Pandas library is installed for CSV processing.
+### Prerequisites
+- Ensure you have a CSV file formatted with columns: `class_name`, `activeClass_name`, `inactive_duration`, `active_duration`, `preamble`, `epilogue`, and `repetitions`. 
+- The CSV file should have rows with `class_name` as "protocol" to indicate the start of a new protocol.
 
-2. **Function Call**:
-   - The main function `generate_protocol` takes the following parameters:
-     - `input_csv`: Path to the input CSV file.
-     - `protocol_name`: Name of the protocol.
-     - `protocol_type`: Type of the protocol (0 for Activity, 1 for Cognitive Test test).
-     - `protocol_group`: Name of the group for the protocol.
-     - `random_class_order`: Boolean value to set random class order.
-     - `disconnect_device_on_finish`: Boolean value to determine if the device should disconnect on finish.
-   - Example call: 
-     ```python generate_protocol(input_csv="path_to_csv.csv", 
-                       protocol_name="Example_Protocol", 
-                       protocol_type=0, 
-                       protocol_group="Group1", 
-                       random_class_order=False, 
-                       disconnect_device_on_finish=True)
-     ```
+### Steps to Generate Protocols
+1. **Prepare the CSV File**: Organize your activities in the CSV file. Each new protocol should start with a row where `class_name` is "protocol". The name for each protocol is taken from the `activeClass_name` column of these rows.
 
-3. **Output**:
-   - The function generates a JSON file named after the `protocol_name`, containing the processed data from the CSV file.
+2. **Run the Tool**:
+   - Call the `generate_multiple_protocols` function with the following parameters:
+     - `input_csv`: Path to your CSV file.
+     - `protocol_group`: A constant group name for all protocols (e.g., "test_group").
+     - `random_class_order`: A boolean indicating whether to randomize the order of activities (True or False).
+     - `disconnect_device_on_finish`: A boolean indicating whether to disconnect the device on finishing the protocol (True or False).
 
-4. **Additional Context** (if needed):
-   - For each protocol type, specific CSV column names and structure are expected. Users should ensure that their CSV files conform to the expected format for correct processing.
-   - In the case of NaN values in the input CSV, these will be replaced with empty strings in the output JSON.
-   - Users may need to modify the function or provide additional context based on specific requirements or CSV structures.
-   - It is recommended to validate the generated JSON file to ensure it meets the intended use case and format.
+   Example:
+   ```python
+   generate_multiple_protocols('/path/to/your/csvfile.csv', 
+                               protocol_group="your_group_name", 
+                               random_class_order=True, 
+                               disconnect_device_on_finish=False)
+   ```
 
-This documentation provides a basic overview and usage guide. For any specific requirements or detailed understanding, users should refer to the code in `protocol_generator.ipynb` and adapt it as necessary.
+3. **Retrieve Generated Files**: The tool will generate JSON files in the specified directory. Each file corresponds to a protocol with the name taken from the `activeClass_name` when `class_name` is "protocol".
+
+### Output
+- JSON files named after each protocol with settings and activities as specified in the CSV file.
+
+## Example CSV Format
+
+```plaintext
+class_name,activeClass_name,inactive_duration,active_duration,preamble,epilogue,repetitions
+protocol,TestProtocol1,,,"Start of Protocol 1","End of Protocol 1",
+activity1,Activity1,500,3000,"Preamble Activity 1","Epilogue Activity 1",5
+activity2,Activity2,500,3000,"Preamble Activity 2","Epilogue Activity 2",5
+protocol,TestProtocol2,,,"Start of Protocol 2","End of Protocol 2",
+activity3,Activity3,500,3000,"Preamble Activity 3","Epilogue Activity 3",5
+```
+
+In the above example, two protocols ("TestProtocol1" and "TestProtocol2") will be generated with respective activities and instructions.
