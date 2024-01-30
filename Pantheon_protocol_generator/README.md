@@ -1,49 +1,71 @@
 
-# Protocol Generator Tool Documentation
+# Documentation for Protocol Generator Tool
 
 ## Overview
 
-The `protocol_generator` tool is designed to convert a CSV file into multiple JSON files for protocol management. Each JSON file represents a unique protocol with specific activities, durations, and instructions. This tool is particularly useful for applications requiring structured activity protocols.
+The Pantheon Protocol Generator Tool is a Python-based utility designed to convert structured data from CSV files into a series of JSON files, each representing a unique protocol. 
 
+## Usage
 
-## How to Use
-
-### Prerequisites
-- Ensure you have a CSV file formatted with columns: `class_name`, `activeClass_name`, `inactive_duration`, `active_duration`, `preamble`, `epilogue`, and `repetitions`. 
-- The CSV file should have rows with `class_name` as "protocol" to indicate the start of a new protocol.
-
-### Steps to Generate Protocols
-1. **Prepare the CSV File**: Organize your activities in the CSV file. Each new protocol should start with a row where `class_name` is "protocol". The name for each protocol is taken from the `activeClass_name` column of these rows.
-
-2. **Run the Tool**:
-   - Call the `generate_multiple_protocols` function with the following parameters:
-     - `input_csv`: Path to your CSV file.
-     - `protocol_group`: A constant group name for all protocols (e.g., "test_group").
-     - `random_class_order`: A boolean indicating whether to randomize the order of activities (True or False).
-     - `disconnect_device_on_finish`: A boolean indicating whether to disconnect the device on finishing the protocol (True or False).
+1. **Prepare Your CSV File:**
+   The CSV file should be structured with the following columns:
+   - `class_name`: Indicates whether the row is a new protocol (`protocol`) or a class within the protocol.
+   - `activeClass_name`: Name used for active intervals in the JSON.
+   - `inactive_duration`: Duration (in milliseconds) of the inactive interval that precedes and follows an active interval.
+   - `active_duration`: Duration (in milliseconds) of the active interval where the data will be collected.
+   - `preamble`: (Optional) Preamble text, images, videos, or links for a protocol or class.
+   - `epilogue`: (Optional) Epilogue text, images, videos, or links for a protocol or class.
+   - `repetitions`: Number of repetitions for a class.
 
    Example:
-   ```python
-   generate_multiple_protocols('/path/to/your/csvfile.csv', 
-                               protocol_group="your_group_name", 
-                               random_class_order=True, 
-                               disconnect_device_on_finish=False)
+   ```
+   class_name, activeClass_name, inactive_duration, active_duration, preamble, epilogue, repetitions
+   protocol, MyProtocol, , , , ,
+   ClassA, ActiveA, 500, 1000, Intro A, Outro A, 3
    ```
 
-3. **Retrieve Generated Files**: The tool will generate JSON files in the specified directory. Each file corresponds to a protocol with the name taken from the `activeClass_name` when `class_name` is "protocol".
+2. **Run the Protocol Generator:**
+   Open the `protocol_generator.ipynb` in Jupyter Notebook.
+   - Update the path to your CSV file in the notebook.
+   - Run the notebook to execute the script.
 
-### Output
-- JSON files named after each protocol with settings and activities as specified in the CSV file.
+3. **Output:**
+   The tool will generate JSON files for each protocol defined in the CSV. Each JSON file will be named after the protocol and will contain:
+   - The name of the protocol.
+   - A list of classes, each with its own set of intervals (active and inactive), preambles, epilogues, and repetitions.
+   - Duration values will be integers representing milliseconds.
 
-## Example CSV Format
+## Example of Generated JSON Structure
 
-```plaintext
-class_name,activeClass_name,inactive_duration,active_duration,preamble,epilogue,repetitions
-protocol,TestProtocol1,,,"Start of Protocol 1","End of Protocol 1",
-activity1,Activity1,500,3000,"Preamble Activity 1","Epilogue Activity 1",5
-activity2,Activity2,500,3000,"Preamble Activity 2","Epilogue Activity 2",5
-protocol,TestProtocol2,,,"Start of Protocol 2","End of Protocol 2",
-activity3,Activity3,500,3000,"Preamble Activity 3","Epilogue Activity 3",5
+```json
+{
+  "name": "MyProtocol",
+  "parameters": [],
+  "active": true,
+  "classes": [
+    {
+      "class": "ClassA",
+      "intervals": [
+        {"label": "inactive", "durationInMillis": 500},
+        {"label": "ActiveA", "durationInMillis": 1000},
+        {"label": "inactive", "durationInMillis": 500}
+      ],
+      "repetitions": 3,
+      "preamble": "Intro A",
+      "epilogue": "Outro A"
+    }
+    // Additional classes...
+  ],
+  "randomClassOrder": false, // As per your setting in the notebook
+  "preamble": "", // Global preamble for the protocol
+  "epilogue": "", // Global epilogue for the protocol
+  "group": "YourGroupName", // As per your setting in the notebook
+  "disconnectDeviceOnFinish": true // As per your setting in the notebook
+}
 ```
 
-In the above example, two protocols ("TestProtocol1" and "TestProtocol2") will be generated with respective activities and instructions.
+## Notes
+
+- Ensure that the CSV file follows the specified format closely, as deviations may result in incorrect or incomplete JSON outputs.
+- This tool is customizable through the Jupyter Notebook, allowing changes in logic or format as per specific requirements.
+
