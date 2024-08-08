@@ -97,12 +97,12 @@ The final schema for the merged DataFrame is:
 | `displayName`                                 | STRING        |                                     |
 | `photoUrl`                                    | STRING        |                                     |
 | `username`                                    | STRING        |                                     |
-| `algo_enrichment_data_mean_reaction_time`     | STRING        | Algorithm Calculations Dataset       |
-| `algo_enrichment_data_accuracy`               | STRING        |                                     |
-| `algo_enrichment_data_stdev_reaction_time`    | STRING        |                                     |
-| `algo_enrichment_data_number_of_trials`       | STRING        |                                     |
-| `algo_enrichment_data_number_of_false_starts` | STRING        |                                     |
-| `algo_enrichment_data_number_of_lapses`       | STRING        |                                     |
+| `algo_enrichment_data_mean_reaction_time`     | FLOAT         | Algorithm Calculations Dataset       |
+| `algo_enrichment_data_accuracy`               | FLOAT         |                                     |
+| `algo_enrichment_data_stdev_reaction_time`    | FLOAT         |                                     |
+| `algo_enrichment_data_number_of_trials`       | FLOAT         |                                     |
+| `algo_enrichment_data_number_of_false_starts` | FLOAT         |                                     |
+| `algo_enrichment_data_number_of_lapses`       | FLOAT         |                                     |
 | `application_id`                              | STRING        | Metadata Dataset                     |
 | `device_id`                                   | STRING        |                                     |
 | `device_version`                              | STRING        |                                     |
@@ -185,6 +185,4 @@ BigQuery column names can only contain letters (a-z, A-Z), numbers (0-9), or und
 **Flattening Columns:**
 
 ```python
-df[column] = pd.to_numeric(df[column], errors='coerce')
-
 df[column] = pd.to_numeric(df[column], errors='coerce')
