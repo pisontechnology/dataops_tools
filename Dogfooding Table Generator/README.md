@@ -1,164 +1,182 @@
-# Unified Reaction Test Data [Tables & Dashboards]
+# Dogfooding Tables & Dashboards
+
+## Overview
 
 **Owned by:** Edward Lai  
-**Last updated:** 3 minutes ago  
-**Read Time:** 3 min  
 
-**Demo Link:** [Ed's Playground](#)
+## Files Included
+
+- `tables.ipynb`
+- `README.md`
+- `module_101_217.py`
+
+## Files Excluded
+
+- `key.json` (BigQuery)
+- `pison_users.csv`
+- `dependancies.tar` (for Setup)
 
 ## Objective
 
-The primary goal of this project is to unify various datasets related to Pison’s reaction tests into a single, comprehensive DataFrame. This unified dataset aims to enhance the accuracy of insights concerning DogFooding.
+The primary objective of this project is to merge various datasets related to Pison’s reaction tests into a comprehensive DataFrame. This unified dataset will enhance the accuracy of insights related to Dogfooding.
 
 ## Data Sources
 
-**Date Range:** May 1st to August 7th
+**Date Range:** May 1st to August 15th
 
-### User Information Dataset (`user_df`)
-- **Description:** Contains user-related information such as email, displayName, photoUrl, and username.
-- **Source:** `from query.microservices import get_users`
+- **User Information Dataset (`user_df`):** Contains user-related information such as email, displayName, photoUrl, and username.
+  - Data Source: `from query.microservices import get_users`
 
-### Metadata Dataset (`metadata_df`)
-- **Description:** Includes session and device metadata such as application_id, device_id, and device_version.
-- **Source:** `from query.microservices import get_all_metadata`
+- **Metadata Dataset (`metadata_df`):** Includes metadata related to sessions and devices including application_id, device_id, and device_version.
+  - Data Source: `from query.microservices import get_all_metadata`
 
-### Algorithm Calculations Dataset (`algo_calculations_df`)
-- **Description:** Contains calculated algorithm data like mean reaction time, accuracy, etc.
-- **Source:** Uses `get_algo_calculations` function to generate the DataFrame.
+- **Algorithm Calculations Dataset (`algo_calculations_df`):** Contains calculated algorithm data such as mean reaction time, accuracy, etc.
+  - Data Source: Uses `get_algo_calculations` function
 
-### Reaction Tests Dataset (`tests_df`)
-- **Description:** Includes reaction test data including reaction_test_type, user_id, session_id, team_id, and various enrichment fields.
-- **Source:** `from query.microservices import get_reaction_tests`
+- **Reaction Tests Dataset (`tests_df`):** Contains reaction test data including reaction_test_type, user_id, session_id, team_id, and various sw-enrichment fields.
+  - Data Source: `from query.microservices import get_reaction_tests`
 
-### Pison Team Dataset (`pison_team_df`)
-- **Description:** Contains user’s Pison team information.
-- **Source:** `pison_users.csv`
+- **Pison Team Dataset (`pison_team_df`):** Contains user’s Pison team information.
+  - Data Source: `pison_users.csv` (No trailing spaces this time :sweat: )
 
 ## Merging Process
 
-1. **Load DataFrames**
-2. **Filter Specific Users**
+1. **Load DataFrames**  
+2. **Filter Specific Users**  
 3. **Merge DataFrames**
    - Merge `tests_df` with `user_df`
-   - Merge the result with `metadata_df`
-   - Merge the result with `algo_calculations_df`
-   - Merge the result with `pison_team_df`
-4. **Clean and Process DataFrame**
-   - Return Final DataFrame
+   - Merge result with `metadata_df`
+   - Merge result with `algo_calculations_df`
+   - Merge result with `pison_team_df`
+4. **Clean and Process DataFrame**  
+5. **Return Final DataFrame**
 
-### Key Features
+## Key Features
 
-- **Specific User Filtering:** Filters user data to include only relevant users.
-- **Improved Data Quality:**
-  - Removes unnecessary columns
-  - Converts specific columns to numerical formats
-  - Converts `is_failed` column to boolean and replaces NaN values with False
+- **Specific User Filtering:** Includes only relevant users for analysis.
+- **Improved Data Quality:** Removes unnecessary columns, flattens data types, and converts columns to appropriate formats.
 - **Flexible Merging Process:** Easily adjust which tables (READY, AGILITY, or FOCUS) to build by modifying a single variable (`test_type`).
-- **BigQuery Integration:** Ensure destination table adjustments as per user needs.
+- **Schema Adjustments:** Change destination table in BigQuery as needed.
 
-### Column Names Pairing & Flow Chart
+## Schema (Big_df)
 
-![Flow Chart](image-20240806-132533.png)
+| Column Name                             | Data Type | Dataset of Origin                        |
+|-----------------------------------------|-----------|------------------------------------------|
+| id                                      | STRING    | Reaction Tests Dataset                   |
+| reaction_test_type                      | STRING    |                                          |
+| user_id                                 | STRING    |                                          |
+| session_id                              | STRING    |                                          |
+| team_id                                 | FLOAT     |                                          |
+| comment                                 | STRING    |                                          |
+| created_at                              | TIMESTAMP |                                          |
+| is_failed                               | BOOLEAN   |                                          |
+| score                                   | FLOAT     |                                          |
+| plan_duration_in_seconds                | FLOAT     |                                          |
+| sw_enrichment_data_number_of_trials     | FLOAT     |                                          |
+| sw_enrichment_data_number_of_false_starts | FLOAT   |                                          |
+| sw_enrichment_data_number_of_lapses     | FLOAT     |                                          |
+| sw_enrichment_data_mean_reaction_time   | FLOAT     |                                          |
+| sw_enrichment_data_stdev_reaction_time  | FLOAT     |                                          |
+| sw_enrichment_data_accuracy             | FLOAT     |                                          |
+| baseline_id                             | STRING    |                                          |
+| is_deleted                              | STRING    |                                          |
+| email                                   | STRING    | User Information Dataset                 |
+| displayName                             | STRING    |                                          |
+| photoUrl                                | STRING    |                                          |
+| username                                | STRING    |                                          |
+| algo_enrichment_data_mean_reaction_time | FLOAT     | Algorithm Calculations Dataset           |
+| algo_enrichment_data_accuracy           | FLOAT     |                                          |
+| algo_enrichment_data_stdev_reaction_time| FLOAT     |                                          |
+| algo_enrichment_data_number_of_trials  | FLOAT     |                                          |
+| algo_enrichment_data_number_of_false_starts | FLOAT |                                          |
+| algo_enrichment_data_number_of_lapses   | FLOAT    |                                          |
+| application_id                          | STRING    | Metadata Dataset                         |
+| device_id                               | STRING    |                                          |
+| device_version                          | STRING    |                                          |
+| pison_team                              | STRING    | Pison Team Dataset                       |
 
-### Explanation
+## BigQuery Tables Locations
 
-- **Unified Reaction Test Data [Total Records]**
-  - ![Total Records](Screenshot%2024-08-05%20at%204.15.16%20PM.png)
-- **Unified Reaction Test Data [Failed Records]**
-  - ![Failed Records](Screenshot%2024-08-06%20at%204.23.41%20PM.png)
-- **Unified Reaction Test Data [Agility Records]**
-  - ![Agility Records](Screenshot%2024-08-06%20at%204.26.51%20PM.png)
+# Total Tests Dashboards
 
-### Schema
+## The Engagement Dashboard [Engagement]
 
-The final schema for the merged DataFrame is:
+Designed to track and analyze the engagement levels of Dogfooders at Pison.
 
-| **Column Name**                                | **Data Type** | **Dataset of Origin**               |
-|------------------------------------------------|---------------|-------------------------------------|
-| `id`                                           | STRING        | Reaction Tests Dataset               |
-| `reaction_test_type`                          | STRING        |                                     |
-| `user_id`                                     | STRING        |                                     |
-| `session_id`                                  | STRING        |                                     |
-| `team_id`                                     | FLOAT         |                                     |
-| `comment`                                     | STRING        |                                     |
-| `created_at`                                  | TIMESTAMP     |                                     |
-| `is_failed`                                   | BOOLEAN       |                                     |
-| `score`                                       | FLOAT         |                                     |
-| `plan_duration_in_seconds`                    | FLOAT         |                                     |
-| `sw_enrichment_data_number_of_trials`         | FLOAT         |                                     |
-| `sw_enrichment_data_number_of_false_starts`   | FLOAT         |                                     |
-| `sw_enrichment_data_number_of_lapses`         | FLOAT         |                                     |
-| `sw_enrichment_data_mean_reaction_time`       | FLOAT         |                                     |
-| `sw_enrichment_data_stdev_reaction_time`      | FLOAT         |                                     |
-| `sw_enrichment_data_accuracy`                 | FLOAT         |                                     |
-| `baseline_id`                                 | STRING        |                                     |
-| `is_deleted`                                  | STRING        |                                     |
-| `email`                                       | STRING        | User Information Dataset             |
-| `displayName`                                 | STRING        |                                     |
-| `photoUrl`                                    | STRING        |                                     |
-| `username`                                    | STRING        |                                     |
-| `algo_enrichment_data_mean_reaction_time`     | FLOAT         | Algorithm Calculations Dataset       |
-| `algo_enrichment_data_accuracy`               | FLOAT         |                                     |
-| `algo_enrichment_data_stdev_reaction_time`    | FLOAT         |                                     |
-| `algo_enrichment_data_number_of_trials`       | FLOAT         |                                     |
-| `algo_enrichment_data_number_of_false_starts` | FLOAT         |                                     |
-| `algo_enrichment_data_number_of_lapses`       | FLOAT         |                                     |
-| `application_id`                              | STRING        | Metadata Dataset                     |
-| `device_id`                                   | STRING        |                                     |
-| `device_version`                              | STRING        |                                     |
-| `pison_team`                                  | STRING        | Pison Team Dataset                   |
+- **Features:**
+  - View how frequently users perform tests and assess their activity levels.
+  - Compare engagement by test type, team, and individual user.
+  - Leaderboard displays average scores for each test.
+  - Track engagement trends over time to identify patterns in user activity and team performance.
 
-## Dashboards
+## The Tests Failed Dashboard [Failed Tests]
 
-- **[Ed’s Playground →](#)**
-  - Key Features
-- **[Anarchy Playground →](#)**
-  - Key Features
-- **[Agility Playground →](#)**
-  - Key Features
+Designed to track and analyze the percentage of tests that have failed.
+
+- **Features:**
+  - Categorizes failures based on test type, software version, firmware version, and device ID.
+  - Focuses on technical aspects of the tests to identify patterns and potential issues leading to test failures.
+  - Does not account for team affiliations.
+
+## The Parity Land Dashboard [Parity Land]
+
+Designed to compare and identify parity between calculations performed by the algorithms team and the software team.
+
+- **Features:**
+  - Tracks key metrics: mean reaction time, standard deviation of reaction time, number of trials, false starts, and lapses across all three tests.
+  - Ensures consistency and accuracy between different calculation methodologies and teams.
+  - Helps identify discrepancies or alignment issues in the testing data.
 
 ## Conclusion
 
-This unified dataset provides a comprehensive view for tracking data quality and identifying issues with reaction test data. By combining datasets into a consistent format, it simplifies analysis and dashboard creation. Use this dataset to investigate the causes of failed tests and assess the impact of factors like firmware or devices.
+This merged dataset can be used to track data quality and identify issues and bugs. By combining all datasets related to reaction test data, we ensure access to all relevant information in a consistent format. This facilitates easier analysis, dashboard creation, and future analysis. Use this dataset to understand failed tests, identify contributing factors like firmware or devices, and assess parity between the algorithm team and the software team.
 
-## Additional Notes & Bugs
+## Summary of Issues Range [May 1st to August 15th]
 
-### Data Quality [Columns]
+### High Number of NaNs in Key Columns:
 
-**High Proportion of Missing Values:**
+#### Ready_Table
 
-- `team_id`: 100% NaN values
-- `sw_enrichment_data_number_of_lapses`: 100% NaN values
-- `is_deleted`: 100% NaN values
-- `algo_enrichment_data_mean_reaction_time`: 100% NaN values
-- `algo_enrichment_data_accuracy`: 100% NaN values
-- `algo_enrichment_data_stdev_reaction_time`: 100% NaN values
-- `algo_enrichment_data_number_of_trials`: 100% NaN values
-- `algo_enrichment_data_number_of_false_starts`: 100% NaN values
-- `algo_enrichment_data_number_of_lapses`: 100% NaN values
+- **NaNs:**
+  - `team_id` column: 2084 out of 2084 (100.00%)
+  - `algo_enrichment_data*` columns: 1828 out of 2084 (87.72%)
+  - `application_id`, `device_id`, `device_version` columns: 1766 out of 2084 (84.74%)
 
-**Significant Proportion of Missing Values:**
+  **Note:** Algo calculations for Ready Tests appear in mid-May and mid-June but are lacking elsewhere.
 
-- `session_id`: 67.06% NaN values
-- `baseline_id`: 64.17% NaN values
-- `application_id`: 69.95% NaN values
-- `device_id`: 69.95% NaN values
-- `device_version`: 69.95% NaN values
-- `sw_enrichment_data_number_of_false_starts`: 59.21% NaN values
-- `sw_enrichment_data_mean_reaction_time`: 17.51% NaN values
-- `sw_enrichment_data_stdev_reaction_time`: 19.77% NaN values
-- `sw_enrichment_data_accuracy`: 17.51% NaN values
-- `plan_duration_in_seconds`: 15.52% NaN values
-- `sw_enrichment_data_number_of_trials`: 15.52% NaN values
-- `score`: 11.82% NaN values
-- `photoUrl`: 8.39% NaN values
-- `displayName`: 23.01% NaN values
+#### Agility Table
 
-**Column Naming Conventions:**
+- **NaNs:**
+  - `team_id` column: 416 out of 416 (100.00%)
+  - `score` column: 32 out of 416 (7.69%)
+  - `algo_enrichment_data*` columns: 42 out of 416 (10.10%)
+  - `application_id`, `device_id`, `device_version` columns: 301 out of 416 (72.36%)
 
-BigQuery column names can only contain letters (a-z, A-Z), numbers (0-9), or underscores (_). For example, `algo_enrichment` should be used instead of `algo-enrichment`.
+  **Note:** Device services are only visible in EXPLORE.
 
-**List of Dropped Columns:**
+#### Focus Table
+
+- **Includes:** `fastest_10` and `slowest_10`
+- **NaNs:**
+  - `team_id` column: 538 out of 538 (100.00%)
+  - `score` column: 23 out of 538 (4.28%)
+  - `algo_enrichment_data*` columns: 92 out of 538 (17.10%)
+  - `application_id`, `device_id`, `device_version` columns: 313 out of 538 (58.18%)
+
+## Additional Notes
+
+- We are utilizing functions from `dataops_tools/Dogfooding Table Generator/module_101_217.py`, specifically `pvt_score` and `verbose_output`, for generating the `algorithms_df` for Focus and Ready algorithms.
+- Due to a bug with `configuration_color_blue`, we cannot use the same functions for Agility. We are using `generate_plan_df` and `get_modified_agility_score` instead.
+
+### Known Issues
+
+- **NaNs for `session_id`:** Expected and will appear since `session_id` is only available in the EXPLORE environment.
+- **`team_id` Implementation:** This field has not been implemented in the current pipeline and should be noted for future development. (Different from `pison_team`)
+- **Baseball Data:** Not integrated into current dashboards. To include, add `BASEBALL_DRILL` to the list of reaction test types during DataFrame creation.
+- **Device Service:** Only available for Pison EXPLORE and Pantheon.
+- **Column Naming:** Columns in BigQuery must contain letters, numbers, or underscores. Special characters are not supported and can cause errors in Google Looker Studio.
+
+### List of Columns Dropped
 
 - `customAttributes_subscription`
 - `customAttributes_claims`
@@ -177,12 +195,17 @@ BigQuery column names can only contain letters (a-z, A-Z), numbers (0-9), or und
 - `plan_id`
 - `plan_user_id`
 
-**Error Writing to BigQuery:**
+### Error Writing to BigQuery
 
-- Error converting Pandas column `"sw_enrichment_data_mean_reaction_time"` with datatype `"object"` to an appropriate pyarrow datatype.
-- **Common BigQuery Problem:** Data stored in nested fields must be flattened to be compatible with BigQuery.
+- **Issue:** Error converting Pandas column with name: `"sw_enrichment_data_mean_reaction_time"` and datatype: `"object"` to an appropriate `pyarrow` datatype.
 
-**Flattening Columns:**
+  **Note:** Flatten columns to be "BigQuery-able". Common problem with data stored in nested fields or dictionaries.
 
-```python
-df[column] = pd.to_numeric(df[column], errors='coerce')
+- **Fix:**
+  ```python
+  df[column] = pd.to_numeric(df[column], errors='coerce')
+
+
+    
+
+
