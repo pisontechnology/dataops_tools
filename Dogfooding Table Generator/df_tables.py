@@ -1,10 +1,10 @@
-from query.utils import Env
+from ml_util.query.utils import Env
 import schedule
 import numpy as np
 import pandas as pd
 from pison_cloud.pison.reaction.cloud.v1 import reaction_pb2, reaction_pb2_grpc
-from query.microservices import PisonGrpc
-from query.microservices import ResponseConverter
+from ml_util.query.microservices import PisonGrpc
+from ml_util.query.microservices import ResponseConverter
 
 class ReactionConverter(ResponseConverter):
     def __call__(self, response):
@@ -22,15 +22,15 @@ from datetime import datetime
 from pison_cloud.pison.common.cloud.v1 import common_pb2
 from google.protobuf.timestamp_pb2 import Timestamp
 from google.protobuf.json_format import MessageToDict
-from pison_ready.readiness import get_score as get_readiness_score
-from pison_ready.agility import get_score as get_agility_score
-from pison_ready.focus import get_score as get_focus_score
+from ml_util.pison_ready.readiness import get_score as get_readiness_score
+from ml_util.pison_ready.agility import get_score as get_agility_score
+from ml_util.pison_ready.focus import get_score as get_focus_score
 import pprint
 import time
 from typing import List, Dict
 import datetime as dt
-from query.microservices import get_users
-from query.microservices import get_reaction_tests, get_plan_data,get_all_metadata
+from ml_util.query.microservices import get_users
+from ml_util.query.microservices import get_reaction_tests, get_plan_data,get_all_metadata
 import os
 from google.oauth2 import service_account
 from pandas_gbq import to_gbq, read_gbq
@@ -554,6 +554,7 @@ def get_specific_users(test_df, user_df):
     # Filter the test_df to include only rows where the email is in the email_list
     filtered_df = test_df[test_df['email'].isin(email_list)].reset_index(drop=True)
     return filtered_df
+    
 def create_test_df(env, user_df, algo_calculations_df, test_type, start_date, end_date):
     tests_df = get_reaction_tests(env, start_date = start_date, end_date = end_date)
     tests_df = pd.merge(tests_df, user_df, left_on='user_id', right_on='uid', how='inner')
@@ -565,13 +566,13 @@ def create_test_df(env, user_df, algo_calculations_df, test_type, start_date, en
         test_df = tests_df
         test_types = ['AGILITY', 'FOCUS', 'READY']
         algo_calculations_df = pd.concat(
-            [get_algo_calculations(test, tests_df[tests_df['reaction_test_type'] == test], users_df) for test in test_types],
+            [get_algo_calculations(test, tests_df[tests_df['reaction_test_type'] == test], user_df) for test in test_types],
             axis=0
         ).reset_index(drop=True)    
         #print (algo_calculations_df)
     else:
         test_df = tests_df[tests_df['reaction_test_type'] == test_type]
-        algo_calculations_df = get_algo_calculations(test_type, test_df, users_df)
+        algo_calculations_df = get_algo_calculations(test_type, test_df, user_df)
         
     
     # print(f"Printing Algorithm Columns: {algo_calculations_df.columns}")
@@ -606,23 +607,27 @@ def create_test_df(env, user_df, algo_calculations_df, test_type, start_date, en
 
     return the_final_df
 
+agility_config = {'detection_window': (0.07, 0.750), 'countdown': 5, 'proportion_correct_balanced': True}
+readiness_config = {'detection_window': (0.1, 1.0), 'countdown': 5, 'retained_reaction_time_count': (1,5), 'minimum_reaction_time_count': 2}
+focus_config= {'detection_window': (0.08, 1.0), 'countdown': 5, 'retained_reaction_time_count': (0,90), 'minimum_reaction_time_count': 2, 'lapse_multiplier':1}
+start_date = dt.datetime(2024, 1, 1, 0, 0, 0)
+end_date = dt.datetime(2024, 12, 30, 0, 0, 0)
+
 def main():
+    env = Env.STAGING
+    user_df = get_users(env)
+    user_df = user_df.drop(columns='created_at')
+    pison_users_df = pd.read_csv('pison_users.csv')
+    users_df = get_specific_users(user_df, pison_users_df)
+
+
+    
+    algo_calculations_df = []
+    test_type = None
+
+    big_df = create_test_df(env, users_df, algo_calculations_df, test_type, start_date, end_date)
+
     try:
-        env = Env.STAGING
-        user_df = get_users(env)
-        user_df = user_df.drop(columns='created_at')
-
-        agility_config = {'detection_window': (0.07, 0.750), 'countdown': 5, 'proportion_correct_balanced': True}
-        readiness_config = {'detection_window': (0.1, 1.0), 'countdown': 5, 'retained_reaction_time_count': (1,5), 'minimum_reaction_time_count': 2}
-        focus_config= {'detection_window': (0.08, 1.0), 'countdown': 5, 'retained_reaction_time_count': (0,90), 'minimum_reaction_time_count': 2, 'lapse_multiplier':1}
-        start_date = dt.datetime(2024, 1, 1, 0, 0, 0)
-        end_date = dt.datetime(2024, 12, 30, 0, 0, 0)
-        pison_users_df = pd.read_csv('pison_users.csv')
-
-        algo_calculations_df = []
-        test_type = None
-        users_df = get_specific_users(user_df, pison_users_df)
-        big_df = create_test_df(env, users_df, algo_calculations_df, test_type, start_date, end_date)
         team_df = pd.read_csv('pison_users.csv')
         team_df = team_df[['email', 'Team']]
         team_df.rename(columns={'Team': 'pison_team'}, inplace=True)
@@ -631,33 +636,31 @@ def main():
         team_df_exploded['email'] = team_df_exploded['email'].str.strip()
         email_to_team_map = team_df_exploded.set_index('email')['pison_team'].to_dict()
         big_df['pison_team'] = big_df['email'].map(email_to_team_map)
+    except Exception as e:
+        print(f"Error processing team data: {e}")
+        return
+
+    try:
         project_id = 'core-aca65d38'
         dataset_name = 'Big_Tables'
-        focus_table = 'Focus_Table'
-        agility_table = 'Agility_Table'
-        ready_table = 'Ready_Table'
         super_table = 'Super_Table'
-        CHOOSE_YOUR_DESTINATION_TABLE = super_table   # CHOOSE YOUR TABLE DESTINATION HERE
+        CHOOSE_YOUR_DESTINATION_TABLE = super_table  
         destination_table = f'{project_id}.{dataset_name}.{CHOOSE_YOUR_DESTINATION_TABLE}'
-        rel_cred_path = "key.json"  # Adjust as per your directory structure
+        rel_cred_path = "key.json" 
         cred_path = os.path.abspath(rel_cred_path)
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_path
         credentials = service_account.Credentials.from_service_account_file(cred_path)
-        try:
-            to_gbq(
-            big_df, # CHANGE TO YOUR DF THAT YOU WANT TO PUT
-            destination_table,
-            project_id=project_id,
-            if_exists='replace',
-            credentials=credentials
-            )
-        print("Data successfully written to BigQuery!")
-        except Exception as e:
-            print(f"Error writing to BigQuery: {str(e)}")
+        to_gbq(big_df, destination_table, project_id=project_id, if_exists='replace', credentials=credentials)
+    except FileNotFoundError:
+        print("Error: Google service account key file 'key.json' not found.")
+        return
+    except Exception as e:
+        print(f"Error uploading data to BigQuery: {e}")
+        return
 
 
-schedule.every(8).hours.do(main)
 
+schedule.every(1).hours.do(main)
 if __name__ == "__main__":
     main()  # Run the main function once initially
     while True:
