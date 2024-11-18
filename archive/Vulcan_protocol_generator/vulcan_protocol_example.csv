@@ -1,0 +1,9 @@
+description,duration,gestureId,activeClass,protocolId,repCount,startStimulus,endStimulus,test_number,protocol_group,arm_posture,wrist_posture,hand_posture,body_activity,handedness,file_name
+Pre-Practice,4500,0,FHEH-stim,0,10,1000,3500,0,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Pre-Practice,4500,1,INEH-stim,0,10,1000,3500,0,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Primitives Practice,4500,2,FHEH-stim,1,10,1000,3500,1,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Primitives Practice,4500,3,INEH-stim,1,10,1000,3500,1,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Primitives,4500,4,FHEH-stim,2,10,1000,3500,2,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Primitives,4500,5,INEH-stim,2,10,1000,3500,2,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Compound Practice,4500,6,SHAKE_N_FHEH-stim,3,10,1000,3500,3,test1,arm_in_front,semi_pronated,fist,standing,dominant,
+Compound Practice,4500,7,SHAKE_N_INEH-stim,3,10,1000,3500,3,test1,arm_in_front,semi_pronated,fist,standing,dominant

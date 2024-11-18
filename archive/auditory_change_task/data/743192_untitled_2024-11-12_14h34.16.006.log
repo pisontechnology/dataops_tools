@@ -1,0 +1,96 @@
+14.2786 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+14.2812 	INFO 	Loaded monitor calibration from ['2023_05_01 15:28']
+14.5512 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000023089BB10F0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000023089BB1090>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002308A3DD450>, multiSample=False, name='window1', numSamples=2, pos=[560.0, 300.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+14.5513 	EXP 	window1: backgroundImage = ''
+14.5513 	EXP 	window1: backgroundFit = 'none'
+14.5588 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5596 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5604 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5613 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5622 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5627 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5635 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5644 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5648 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5653 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5661 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5668 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5675 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5683 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5689 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5697 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5704 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5709 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5715 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5724 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5729 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5732 	DEBUG 	Uploading Texture Font fontname to graphics card
+14.5781 	DEBUG 	Upload of Texture Font fontname complete
+14.5835 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5845 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5855 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.5858 	DEBUG 	Uploading Texture Font fontname to graphics card
+14.5900 	DEBUG 	Upload of Texture Font fontname complete
+14.5916 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+14.5916 	EXP 	window1: recordFrameIntervals = False
+14.7710 	EXP 	window1: recordFrameIntervals = True
+14.9564 	EXP 	Screen (0) actual frame rate measured at 59.35Hz
+14.9565 	EXP 	window1: recordFrameIntervals = False
+14.9619 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9627 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9635 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9645 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9654 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9664 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9670 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9678 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9688 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9698 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+14.9701 	DEBUG 	Uploading Texture Font fontname to graphics card
+14.9706 	DEBUG 	Upload of Texture Font fontname complete
+14.9820 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+17.1196 	INFO 	keyboard.Keyboard is using iohub backend.
+17.1197 	INFO 	keyboard.Keyboard is using iohub backend.
+17.1197 	EXP 	untitled: status = STARTED
+17.2107 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+17.2159 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+17.2217 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='end', units='height', win=Window(...), wrapWidth=1)
+0.0362 	INFO 	Keyboard events cleared
+0.0353 	EXP 	text: autoDraw = True
+1.8771 	DATA 	Mouse: Left button down, pos=(444,336)
+1.9898 	DATA 	Mouse:  Left button up, pos=(444,336)
+5.4619 	DATA 	Mouse: Left button down, pos=(418,377)
+5.5752 	DATA 	Mouse:  Left button up, pos=(418,377)
+5.9049 	DEBUG 	Read csv file with pandas: task.csv
+5.9060 	DEBUG 	Clearing unnamed columns from task.csv
+5.9070 	EXP 	Imported task.csv as conditions, 90 conditions, 2 params
+5.9075 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'ISI_duration': 5.0, 'stim_number': 3, 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+9.8837 	DATA 	Keypress: space
+9.8876 	DATA 	Keypress: space
+9.9076 	EXP 	text: autoDraw = False
+9.9076 	EXP 	text_2: autoDraw = True
+14.9020 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'ISI_duration': 5.0, 'stim_number': 5, 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+17.8661 	EXP 	text_2: autoDraw = False
+17.8661 	EXP 	text_2: autoDraw = False
+17.8661 	EXP 	text_2: autoDraw = True
+22.3158 	DATA 	Mouse: Left button down, pos=(499,372)
+22.3657 	DATA 	Mouse:  Left button up, pos=(500,372)
+22.8629 	EXP 	New trial (rep=0, index=2): <Trial 2 (2 in rep 0) data={'ISI_duration': 5.0, 'stim_number': 8, 'thisN': 2, 'thisTrialN': 2, 'thisRepN': 0}>
+25.8776 	EXP 	untitled: status = STOPPED
+25.8783 	DATA 	Keypress: escape
+25.8784 	DATA 	Keypress: 1
+25.8785 	DATA 	Keypress: lctrl
+25.8786 	DATA 	Mouse: Left button down, pos=(385,223)
+25.8790 	DATA 	Mouse:  Left button up, pos=(385,223)
+25.8791 	DATA 	Mouse: Left button down, pos=(387,227)
+25.8798 	DATA 	Mouse:  Left button up, pos=(387,227)
+25.8799 	DATA 	Mouse: Left button down, pos=(387,227)
+25.8802 	DATA 	Mouse:  Left button up, pos=(387,227)
+25.8949 	EXP 	text_2: autoDraw = False
+25.8949 	EXP 	text_2: autoDraw = False
+25.8949 	EXP 	text_2: autoDraw = True
+25.8949 	EXP 	text_2: autoDraw = False
+25.8985 	EXP 	untitled: status = STOPPED
+25.9136 	INFO 	saved data to 'C:\\Users\\tue.vu_pison\\Desktop\\git\\dataops_tools\\auditory_change_task\\data/743192_untitled_2024-11-12_14h34.16.006.csv'
+26.0473 	INFO 	saved data to C:\Users\tue.vu_pison\Desktop\git\dataops_tools\auditory_change_task\data/743192_untitled_2024-11-12_14h34.16.006.psydat
+26.4352 	DEBUG 	Saving data for untitled ExperimentHandler

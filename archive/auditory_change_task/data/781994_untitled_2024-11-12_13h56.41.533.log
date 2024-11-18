@@ -1,0 +1,432 @@
+4.6851 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+4.6866 	INFO 	Loaded monitor calibration from ['2023_05_01 15:28']
+4.9364 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000013595C71A80>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000013595C71A20>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000135991B1DB0>, multiSample=False, name='window1', numSamples=2, pos=[560.0, 300.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+4.9365 	EXP 	window1: backgroundImage = ''
+4.9365 	EXP 	window1: backgroundFit = 'none'
+4.9437 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9445 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9453 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9463 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9471 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9477 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9485 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9494 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9498 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9503 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9511 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9518 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9525 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9532 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9538 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9546 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9554 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9559 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9564 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9573 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9579 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9582 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.9625 	DEBUG 	Upload of Texture Font fontname complete
+4.9680 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9690 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9700 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9702 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.9741 	DEBUG 	Upload of Texture Font fontname complete
+4.9756 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+4.9757 	EXP 	window1: recordFrameIntervals = False
+5.1530 	EXP 	window1: recordFrameIntervals = True
+5.3534 	EXP 	Screen (0) actual frame rate measured at 59.80Hz
+5.3535 	EXP 	window1: recordFrameIntervals = False
+5.3581 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3587 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3594 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3602 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3609 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3617 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3622 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3631 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3639 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3647 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.3649 	DEBUG 	Uploading Texture Font fontname to graphics card
+5.3654 	DEBUG 	Upload of Texture Font fontname complete
+5.3753 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+8.1238 	INFO 	keyboard.Keyboard is using iohub backend.
+8.1239 	INFO 	keyboard.Keyboard is using iohub backend.
+8.1239 	EXP 	untitled: status = STARTED
+8.2243 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+8.2308 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+8.2385 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='end', units='height', win=Window(...), wrapWidth=1)
+0.0514 	INFO 	Keyboard events cleared
+0.0502 	EXP 	text: autoDraw = True
+1.4258 	DATA 	Mouse: Left button down, pos=(260,404)
+1.5269 	DATA 	Mouse:  Left button up, pos=(256,404)
+1.9555 	DEBUG 	Read csv file with pandas: task.csv
+1.9567 	DEBUG 	Clearing unnamed columns from task.csv
+1.9580 	EXP 	Imported task.csv as conditions, 90 conditions, 2 params
+1.9587 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+6.3605 	DATA 	Keypress: space
+6.3718 	EXP 	text: autoDraw = False
+6.3718 	EXP 	text_2: autoDraw = True
+11.3656 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+14.0436 	EXP 	text_2: autoDraw = False
+14.0436 	EXP 	text_2: autoDraw = False
+14.0436 	EXP 	text_2: autoDraw = True
+19.0364 	EXP 	New trial (rep=0, index=2): <Trial 2 (2 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 2, 'thisTrialN': 2, 'thisRepN': 0}>
+22.5172 	EXP 	text_2: autoDraw = False
+22.5172 	EXP 	text_2: autoDraw = False
+22.5172 	EXP 	text_2: autoDraw = True
+27.5121 	EXP 	New trial (rep=0, index=3): <Trial 3 (3 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 3, 'thisTrialN': 3, 'thisRepN': 0}>
+30.7905 	EXP 	text_2: autoDraw = False
+30.7905 	EXP 	text_2: autoDraw = False
+30.7905 	EXP 	text_2: autoDraw = True
+35.7841 	EXP 	New trial (rep=0, index=4): <Trial 4 (4 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 4, 'thisTrialN': 4, 'thisRepN': 0}>
+38.5471 	EXP 	text_2: autoDraw = False
+38.5471 	EXP 	text_2: autoDraw = False
+38.5471 	EXP 	text_2: autoDraw = True
+43.5414 	EXP 	New trial (rep=0, index=5): <Trial 5 (5 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 5, 'thisTrialN': 5, 'thisRepN': 0}>
+46.4533 	EXP 	text_2: autoDraw = False
+46.4533 	EXP 	text_2: autoDraw = False
+46.4533 	EXP 	text_2: autoDraw = True
+51.4492 	EXP 	New trial (rep=0, index=6): <Trial 6 (6 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 6, 'thisTrialN': 6, 'thisRepN': 0}>
+54.2596 	EXP 	text_2: autoDraw = False
+54.2596 	EXP 	text_2: autoDraw = False
+54.2596 	EXP 	text_2: autoDraw = True
+59.2544 	EXP 	New trial (rep=0, index=7): <Trial 7 (7 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 7, 'thisTrialN': 7, 'thisRepN': 0}>
+62.0670 	EXP 	text_2: autoDraw = False
+62.0670 	EXP 	text_2: autoDraw = False
+62.0670 	EXP 	text_2: autoDraw = True
+67.0618 	EXP 	New trial (rep=0, index=8): <Trial 8 (8 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 8, 'thisTrialN': 8, 'thisRepN': 0}>
+69.9229 	EXP 	text_2: autoDraw = False
+69.9229 	EXP 	text_2: autoDraw = False
+69.9229 	EXP 	text_2: autoDraw = True
+74.9142 	EXP 	New trial (rep=0, index=9): <Trial 9 (9 in rep 0) data={'ISI_duration': 5.0, 'stim_number': None, 'thisN': 9, 'thisTrialN': 9, 'thisRepN': 0}>
+77.7296 	EXP 	text_2: autoDraw = False
+77.7296 	EXP 	text_2: autoDraw = False
+77.7296 	EXP 	text_2: autoDraw = True
+82.7254 	EXP 	New trial (rep=0, index=10): <Trial 10 (10 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 10, 'thisTrialN': 10, 'thisRepN': 0}>
+85.3851 	EXP 	text_2: autoDraw = False
+85.3851 	EXP 	text_2: autoDraw = False
+85.3851 	EXP 	text_2: autoDraw = True
+89.8759 	EXP 	New trial (rep=0, index=11): <Trial 11 (11 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 11, 'thisTrialN': 11, 'thisRepN': 0}>
+92.5253 	EXP 	text_2: autoDraw = False
+92.5253 	EXP 	text_2: autoDraw = False
+92.5253 	EXP 	text_2: autoDraw = True
+97.0212 	EXP 	New trial (rep=0, index=12): <Trial 12 (12 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 12, 'thisTrialN': 12, 'thisRepN': 0}>
+99.8306 	EXP 	text_2: autoDraw = False
+99.8306 	EXP 	text_2: autoDraw = False
+99.8306 	EXP 	text_2: autoDraw = True
+104.3255 	EXP 	New trial (rep=0, index=13): <Trial 13 (13 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 13, 'thisTrialN': 13, 'thisRepN': 0}>
+107.0873 	EXP 	text_2: autoDraw = False
+107.0873 	EXP 	text_2: autoDraw = False
+107.0873 	EXP 	text_2: autoDraw = True
+111.5811 	EXP 	New trial (rep=0, index=14): <Trial 14 (14 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 14, 'thisTrialN': 14, 'thisRepN': 0}>
+114.2924 	EXP 	text_2: autoDraw = False
+114.2924 	EXP 	text_2: autoDraw = False
+114.2924 	EXP 	text_2: autoDraw = True
+118.7875 	EXP 	New trial (rep=0, index=15): <Trial 15 (15 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 15, 'thisTrialN': 15, 'thisRepN': 0}>
+121.5487 	EXP 	text_2: autoDraw = False
+121.5487 	EXP 	text_2: autoDraw = False
+121.5487 	EXP 	text_2: autoDraw = True
+126.0424 	EXP 	New trial (rep=0, index=16): <Trial 16 (16 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 16, 'thisTrialN': 16, 'thisRepN': 0}>
+128.7051 	EXP 	text_2: autoDraw = False
+128.7051 	EXP 	text_2: autoDraw = False
+128.7051 	EXP 	text_2: autoDraw = True
+133.1999 	EXP 	New trial (rep=0, index=17): <Trial 17 (17 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 17, 'thisTrialN': 17, 'thisRepN': 0}>
+135.9605 	EXP 	text_2: autoDraw = False
+135.9605 	EXP 	text_2: autoDraw = False
+135.9605 	EXP 	text_2: autoDraw = True
+140.4536 	EXP 	New trial (rep=0, index=18): <Trial 18 (18 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 18, 'thisTrialN': 18, 'thisRepN': 0}>
+143.1672 	EXP 	text_2: autoDraw = False
+143.1672 	EXP 	text_2: autoDraw = False
+143.1672 	EXP 	text_2: autoDraw = True
+147.6614 	EXP 	New trial (rep=0, index=19): <Trial 19 (19 in rep 0) data={'ISI_duration': 4.5, 'stim_number': None, 'thisN': 19, 'thisTrialN': 19, 'thisRepN': 0}>
+150.3729 	EXP 	text_2: autoDraw = False
+150.3729 	EXP 	text_2: autoDraw = False
+150.3729 	EXP 	text_2: autoDraw = True
+154.8642 	EXP 	New trial (rep=0, index=20): <Trial 20 (20 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 20, 'thisTrialN': 20, 'thisRepN': 0}>
+157.5288 	EXP 	text_2: autoDraw = False
+157.5288 	EXP 	text_2: autoDraw = False
+157.5288 	EXP 	text_2: autoDraw = True
+161.5205 	EXP 	New trial (rep=0, index=21): <Trial 21 (21 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 21, 'thisTrialN': 21, 'thisRepN': 0}>
+164.4512 	EXP 	text_2: autoDraw = False
+164.4512 	EXP 	text_2: autoDraw = False
+164.4512 	EXP 	text_2: autoDraw = True
+168.4456 	EXP 	New trial (rep=0, index=22): <Trial 22 (22 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 22, 'thisTrialN': 22, 'thisRepN': 0}>
+171.1567 	EXP 	text_2: autoDraw = False
+171.1567 	EXP 	text_2: autoDraw = False
+171.1567 	EXP 	text_2: autoDraw = True
+175.1514 	EXP 	New trial (rep=0, index=23): <Trial 23 (23 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 23, 'thisTrialN': 23, 'thisRepN': 0}>
+177.9622 	EXP 	text_2: autoDraw = False
+177.9622 	EXP 	text_2: autoDraw = False
+177.9622 	EXP 	text_2: autoDraw = True
+181.9653 	EXP 	New trial (rep=0, index=24): <Trial 24 (24 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 24, 'thisTrialN': 24, 'thisRepN': 0}>
+184.7677 	EXP 	text_2: autoDraw = False
+184.7677 	EXP 	text_2: autoDraw = False
+184.7677 	EXP 	text_2: autoDraw = True
+188.7638 	EXP 	New trial (rep=0, index=25): <Trial 25 (25 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 25, 'thisTrialN': 25, 'thisRepN': 0}>
+191.5899 	EXP 	text_2: autoDraw = False
+191.5899 	EXP 	text_2: autoDraw = False
+191.5899 	EXP 	text_2: autoDraw = True
+195.5861 	EXP 	New trial (rep=0, index=26): <Trial 26 (26 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 26, 'thisTrialN': 26, 'thisRepN': 0}>
+198.4128 	EXP 	text_2: autoDraw = False
+198.4128 	EXP 	text_2: autoDraw = False
+198.4128 	EXP 	text_2: autoDraw = True
+202.4058 	EXP 	New trial (rep=0, index=27): <Trial 27 (27 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 27, 'thisTrialN': 27, 'thisRepN': 0}>
+205.2180 	EXP 	text_2: autoDraw = False
+205.2180 	EXP 	text_2: autoDraw = False
+205.2180 	EXP 	text_2: autoDraw = True
+209.2125 	EXP 	New trial (rep=0, index=28): <Trial 28 (28 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 28, 'thisTrialN': 28, 'thisRepN': 0}>
+212.0743 	EXP 	text_2: autoDraw = False
+212.0743 	EXP 	text_2: autoDraw = False
+212.0743 	EXP 	text_2: autoDraw = True
+216.0659 	EXP 	New trial (rep=0, index=29): <Trial 29 (29 in rep 0) data={'ISI_duration': 4.0, 'stim_number': None, 'thisN': 29, 'thisTrialN': 29, 'thisRepN': 0}>
+218.8297 	EXP 	text_2: autoDraw = False
+218.8297 	EXP 	text_2: autoDraw = False
+218.8297 	EXP 	text_2: autoDraw = True
+222.8217 	EXP 	New trial (rep=0, index=30): <Trial 30 (30 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 30, 'thisTrialN': 30, 'thisRepN': 0}>
+225.6352 	EXP 	text_2: autoDraw = False
+225.6352 	EXP 	text_2: autoDraw = False
+225.6352 	EXP 	text_2: autoDraw = True
+229.1261 	EXP 	New trial (rep=0, index=31): <Trial 31 (31 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 31, 'thisTrialN': 31, 'thisRepN': 0}>
+231.9400 	EXP 	text_2: autoDraw = False
+231.9400 	EXP 	text_2: autoDraw = False
+231.9400 	EXP 	text_2: autoDraw = True
+235.4357 	EXP 	New trial (rep=0, index=32): <Trial 32 (32 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 32, 'thisTrialN': 32, 'thisRepN': 0}>
+238.1957 	EXP 	text_2: autoDraw = False
+238.1957 	EXP 	text_2: autoDraw = False
+238.1957 	EXP 	text_2: autoDraw = True
+241.6855 	EXP 	New trial (rep=0, index=33): <Trial 33 (33 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 33, 'thisTrialN': 33, 'thisRepN': 0}>
+244.5010 	EXP 	text_2: autoDraw = False
+244.5010 	EXP 	text_2: autoDraw = False
+244.5010 	EXP 	text_2: autoDraw = True
+248.0059 	EXP 	New trial (rep=0, index=34): <Trial 34 (34 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 34, 'thisTrialN': 34, 'thisRepN': 0}>
+250.8728 	EXP 	text_2: autoDraw = False
+250.8728 	EXP 	text_2: autoDraw = False
+250.8728 	EXP 	text_2: autoDraw = True
+254.3675 	EXP 	New trial (rep=0, index=35): <Trial 35 (35 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 35, 'thisTrialN': 35, 'thisRepN': 0}>
+257.1280 	EXP 	text_2: autoDraw = False
+257.1280 	EXP 	text_2: autoDraw = False
+257.1280 	EXP 	text_2: autoDraw = True
+260.6221 	EXP 	New trial (rep=0, index=36): <Trial 36 (36 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 36, 'thisTrialN': 36, 'thisRepN': 0}>
+264.0165 	EXP 	text_2: autoDraw = False
+264.0165 	EXP 	text_2: autoDraw = False
+264.0165 	EXP 	text_2: autoDraw = True
+267.5119 	EXP 	New trial (rep=0, index=37): <Trial 37 (37 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 37, 'thisTrialN': 37, 'thisRepN': 0}>
+270.1723 	EXP 	text_2: autoDraw = False
+270.1723 	EXP 	text_2: autoDraw = False
+270.1723 	EXP 	text_2: autoDraw = True
+273.6669 	EXP 	New trial (rep=0, index=38): <Trial 38 (38 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 38, 'thisTrialN': 38, 'thisRepN': 0}>
+276.3271 	EXP 	text_2: autoDraw = False
+276.3271 	EXP 	text_2: autoDraw = False
+276.3271 	EXP 	text_2: autoDraw = True
+279.8212 	EXP 	New trial (rep=0, index=39): <Trial 39 (39 in rep 0) data={'ISI_duration': 3.5, 'stim_number': None, 'thisN': 39, 'thisTrialN': 39, 'thisRepN': 0}>
+282.5819 	EXP 	text_2: autoDraw = False
+282.5819 	EXP 	text_2: autoDraw = False
+282.5819 	EXP 	text_2: autoDraw = True
+286.0752 	EXP 	New trial (rep=0, index=40): <Trial 40 (40 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 40, 'thisTrialN': 40, 'thisRepN': 0}>
+288.8871 	EXP 	text_2: autoDraw = False
+288.8871 	EXP 	text_2: autoDraw = False
+288.8871 	EXP 	text_2: autoDraw = True
+291.8775 	EXP 	New trial (rep=0, index=41): <Trial 41 (41 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 41, 'thisTrialN': 41, 'thisRepN': 0}>
+294.5917 	EXP 	text_2: autoDraw = False
+294.5917 	EXP 	text_2: autoDraw = False
+294.5917 	EXP 	text_2: autoDraw = True
+297.5864 	EXP 	New trial (rep=0, index=42): <Trial 42 (42 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 42, 'thisTrialN': 42, 'thisRepN': 0}>
+300.2472 	EXP 	text_2: autoDraw = False
+300.2472 	EXP 	text_2: autoDraw = False
+300.2472 	EXP 	text_2: autoDraw = True
+303.2406 	EXP 	New trial (rep=0, index=43): <Trial 43 (43 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 43, 'thisTrialN': 43, 'thisRepN': 0}>
+306.0518 	EXP 	text_2: autoDraw = False
+306.0518 	EXP 	text_2: autoDraw = False
+306.0518 	EXP 	text_2: autoDraw = True
+309.0562 	EXP 	New trial (rep=0, index=44): <Trial 44 (44 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 44, 'thisTrialN': 44, 'thisRepN': 0}>
+311.7733 	EXP 	text_2: autoDraw = False
+311.7733 	EXP 	text_2: autoDraw = False
+311.7733 	EXP 	text_2: autoDraw = True
+314.7677 	EXP 	New trial (rep=0, index=45): <Trial 45 (45 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 45, 'thisTrialN': 45, 'thisRepN': 0}>
+318.1130 	EXP 	text_2: autoDraw = False
+318.1130 	EXP 	text_2: autoDraw = False
+318.1130 	EXP 	text_2: autoDraw = True
+321.1029 	EXP 	New trial (rep=0, index=46): <Trial 46 (46 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 46, 'thisTrialN': 46, 'thisRepN': 0}>
+324.1832 	EXP 	text_2: autoDraw = False
+324.1832 	EXP 	text_2: autoDraw = False
+324.1832 	EXP 	text_2: autoDraw = True
+327.1771 	EXP 	New trial (rep=0, index=47): <Trial 47 (47 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 47, 'thisTrialN': 47, 'thisRepN': 0}>
+329.9549 	EXP 	text_2: autoDraw = False
+329.9549 	EXP 	text_2: autoDraw = False
+329.9549 	EXP 	text_2: autoDraw = True
+332.9441 	EXP 	New trial (rep=0, index=48): <Trial 48 (48 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 48, 'thisTrialN': 48, 'thisRepN': 0}>
+335.6591 	EXP 	text_2: autoDraw = False
+335.6591 	EXP 	text_2: autoDraw = False
+335.6591 	EXP 	text_2: autoDraw = True
+338.6522 	EXP 	New trial (rep=0, index=49): <Trial 49 (49 in rep 0) data={'ISI_duration': 3.0, 'stim_number': None, 'thisN': 49, 'thisTrialN': 49, 'thisRepN': 0}>
+341.5140 	EXP 	text_2: autoDraw = False
+341.5140 	EXP 	text_2: autoDraw = False
+341.5140 	EXP 	text_2: autoDraw = True
+344.5066 	EXP 	New trial (rep=0, index=50): <Trial 50 (50 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 50, 'thisTrialN': 50, 'thisRepN': 0}>
+347.1690 	EXP 	text_2: autoDraw = False
+347.1690 	EXP 	text_2: autoDraw = False
+347.1690 	EXP 	text_2: autoDraw = True
+349.6632 	EXP 	New trial (rep=0, index=51): <Trial 51 (51 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 51, 'thisTrialN': 51, 'thisRepN': 0}>
+352.3740 	EXP 	text_2: autoDraw = False
+352.3740 	EXP 	text_2: autoDraw = False
+352.3740 	EXP 	text_2: autoDraw = True
+354.8666 	EXP 	New trial (rep=0, index=52): <Trial 52 (52 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 52, 'thisTrialN': 52, 'thisRepN': 0}>
+357.6776 	EXP 	text_2: autoDraw = False
+357.6776 	EXP 	text_2: autoDraw = False
+357.6776 	EXP 	text_2: autoDraw = True
+360.1676 	EXP 	New trial (rep=0, index=53): <Trial 53 (53 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 53, 'thisTrialN': 53, 'thisRepN': 0}>
+363.5657 	EXP 	text_2: autoDraw = False
+363.5657 	EXP 	text_2: autoDraw = False
+363.5657 	EXP 	text_2: autoDraw = True
+366.0561 	EXP 	New trial (rep=0, index=54): <Trial 54 (54 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 54, 'thisTrialN': 54, 'thisRepN': 0}>
+368.9205 	EXP 	text_2: autoDraw = False
+368.9205 	EXP 	text_2: autoDraw = False
+368.9205 	EXP 	text_2: autoDraw = True
+371.4123 	EXP 	New trial (rep=0, index=55): <Trial 55 (55 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 55, 'thisTrialN': 55, 'thisRepN': 0}>
+374.2747 	EXP 	text_2: autoDraw = False
+374.2747 	EXP 	text_2: autoDraw = False
+374.2747 	EXP 	text_2: autoDraw = True
+376.7630 	EXP 	New trial (rep=0, index=56): <Trial 56 (56 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 56, 'thisTrialN': 56, 'thisRepN': 0}>
+379.8553 	EXP 	text_2: autoDraw = False
+379.8553 	EXP 	text_2: autoDraw = False
+379.8553 	EXP 	text_2: autoDraw = True
+382.3557 	EXP 	New trial (rep=0, index=57): <Trial 57 (57 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 57, 'thisTrialN': 57, 'thisRepN': 0}>
+385.5858 	EXP 	text_2: autoDraw = False
+385.5858 	EXP 	text_2: autoDraw = False
+385.5858 	EXP 	text_2: autoDraw = True
+388.0762 	EXP 	New trial (rep=0, index=58): <Trial 58 (58 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 58, 'thisTrialN': 58, 'thisRepN': 0}>
+390.8888 	EXP 	text_2: autoDraw = False
+390.8888 	EXP 	text_2: autoDraw = False
+390.8888 	EXP 	text_2: autoDraw = True
+393.3778 	EXP 	New trial (rep=0, index=59): <Trial 59 (59 in rep 0) data={'ISI_duration': 2.5, 'stim_number': None, 'thisN': 59, 'thisTrialN': 59, 'thisRepN': 0}>
+396.0767 	EXP 	text_2: autoDraw = False
+396.0767 	EXP 	text_2: autoDraw = False
+396.0767 	EXP 	text_2: autoDraw = True
+398.5659 	EXP 	New trial (rep=0, index=60): <Trial 60 (60 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 60, 'thisTrialN': 60, 'thisRepN': 0}>
+401.3806 	EXP 	text_2: autoDraw = False
+401.3806 	EXP 	text_2: autoDraw = False
+401.3806 	EXP 	text_2: autoDraw = True
+403.3735 	EXP 	New trial (rep=0, index=61): <Trial 61 (61 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 61, 'thisTrialN': 61, 'thisRepN': 0}>
+406.0848 	EXP 	text_2: autoDraw = False
+406.0848 	EXP 	text_2: autoDraw = False
+406.0848 	EXP 	text_2: autoDraw = True
+408.0738 	EXP 	New trial (rep=0, index=62): <Trial 62 (62 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 62, 'thisTrialN': 62, 'thisRepN': 0}>
+410.8382 	EXP 	text_2: autoDraw = False
+410.8382 	EXP 	text_2: autoDraw = False
+410.8382 	EXP 	text_2: autoDraw = True
+412.8312 	EXP 	New trial (rep=0, index=63): <Trial 63 (63 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 63, 'thisTrialN': 63, 'thisRepN': 0}>
+416.2598 	EXP 	text_2: autoDraw = False
+416.2598 	EXP 	text_2: autoDraw = False
+416.2598 	EXP 	text_2: autoDraw = True
+418.2516 	EXP 	New trial (rep=0, index=64): <Trial 64 (64 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 64, 'thisTrialN': 64, 'thisRepN': 0}>
+420.9637 	EXP 	text_2: autoDraw = False
+420.9637 	EXP 	text_2: autoDraw = False
+420.9637 	EXP 	text_2: autoDraw = True
+422.9508 	EXP 	New trial (rep=0, index=65): <Trial 65 (65 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 65, 'thisTrialN': 65, 'thisRepN': 0}>
+425.6510 	EXP 	text_2: autoDraw = False
+425.6510 	EXP 	text_2: autoDraw = False
+425.6510 	EXP 	text_2: autoDraw = True
+427.6434 	EXP 	New trial (rep=0, index=66): <Trial 66 (66 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 66, 'thisTrialN': 66, 'thisRepN': 0}>
+430.5752 	EXP 	text_2: autoDraw = False
+430.5752 	EXP 	text_2: autoDraw = False
+430.5752 	EXP 	text_2: autoDraw = True
+432.5621 	EXP 	New trial (rep=0, index=67): <Trial 67 (67 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 67, 'thisTrialN': 67, 'thisRepN': 0}>
+435.6429 	EXP 	text_2: autoDraw = False
+435.6429 	EXP 	text_2: autoDraw = False
+435.6429 	EXP 	text_2: autoDraw = True
+437.6331 	EXP 	New trial (rep=0, index=68): <Trial 68 (68 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 68, 'thisTrialN': 68, 'thisRepN': 0}>
+441.0175 	EXP 	text_2: autoDraw = False
+441.0175 	EXP 	text_2: autoDraw = False
+441.0175 	EXP 	text_2: autoDraw = True
+443.0073 	EXP 	New trial (rep=0, index=69): <Trial 69 (69 in rep 0) data={'ISI_duration': 2.0, 'stim_number': None, 'thisN': 69, 'thisTrialN': 69, 'thisRepN': 0}>
+446.3848 	EXP 	text_2: autoDraw = False
+446.3848 	EXP 	text_2: autoDraw = False
+446.3848 	EXP 	text_2: autoDraw = True
+448.3737 	EXP 	New trial (rep=0, index=70): <Trial 70 (70 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 70, 'thisTrialN': 70, 'thisRepN': 0}>
+451.6557 	EXP 	text_2: autoDraw = False
+451.6557 	EXP 	text_2: autoDraw = False
+451.6557 	EXP 	text_2: autoDraw = True
+453.1451 	EXP 	New trial (rep=0, index=71): <Trial 71 (71 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 71, 'thisTrialN': 71, 'thisRepN': 0}>
+456.0094 	EXP 	text_2: autoDraw = False
+456.0094 	EXP 	text_2: autoDraw = False
+456.0094 	EXP 	text_2: autoDraw = True
+457.5016 	EXP 	New trial (rep=0, index=72): <Trial 72 (72 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 72, 'thisTrialN': 72, 'thisRepN': 0}>
+460.2131 	EXP 	text_2: autoDraw = False
+460.2131 	EXP 	text_2: autoDraw = False
+460.2131 	EXP 	text_2: autoDraw = True
+461.7019 	EXP 	New trial (rep=0, index=73): <Trial 73 (73 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 73, 'thisTrialN': 73, 'thisRepN': 0}>
+464.4162 	EXP 	text_2: autoDraw = False
+464.4162 	EXP 	text_2: autoDraw = False
+464.4162 	EXP 	text_2: autoDraw = True
+465.9065 	EXP 	New trial (rep=0, index=74): <Trial 74 (74 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 74, 'thisTrialN': 74, 'thisRepN': 0}>
+468.7196 	EXP 	text_2: autoDraw = False
+468.7196 	EXP 	text_2: autoDraw = False
+468.7196 	EXP 	text_2: autoDraw = True
+470.2090 	EXP 	New trial (rep=0, index=75): <Trial 75 (75 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 75, 'thisTrialN': 75, 'thisRepN': 0}>
+472.9906 	EXP 	text_2: autoDraw = False
+472.9906 	EXP 	text_2: autoDraw = False
+472.9906 	EXP 	text_2: autoDraw = True
+474.4987 	EXP 	New trial (rep=0, index=76): <Trial 76 (76 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 76, 'thisTrialN': 76, 'thisRepN': 0}>
+477.4108 	EXP 	text_2: autoDraw = False
+477.4108 	EXP 	text_2: autoDraw = False
+477.4108 	EXP 	text_2: autoDraw = True
+478.9047 	EXP 	New trial (rep=0, index=77): <Trial 77 (77 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 77, 'thisTrialN': 77, 'thisRepN': 0}>
+482.3976 	EXP 	text_2: autoDraw = False
+482.3976 	EXP 	text_2: autoDraw = False
+482.3976 	EXP 	text_2: autoDraw = True
+483.8906 	EXP 	New trial (rep=0, index=78): <Trial 78 (78 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 78, 'thisTrialN': 78, 'thisRepN': 0}>
+487.2019 	EXP 	text_2: autoDraw = False
+487.2019 	EXP 	text_2: autoDraw = False
+487.2019 	EXP 	text_2: autoDraw = True
+488.6918 	EXP 	New trial (rep=0, index=79): <Trial 79 (79 in rep 0) data={'ISI_duration': 1.5, 'stim_number': None, 'thisN': 79, 'thisTrialN': 79, 'thisRepN': 0}>
+492.0564 	EXP 	text_2: autoDraw = False
+492.0564 	EXP 	text_2: autoDraw = False
+492.0564 	EXP 	text_2: autoDraw = True
+493.5485 	EXP 	New trial (rep=0, index=80): <Trial 80 (80 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 80, 'thisTrialN': 80, 'thisRepN': 0}>
+496.4261 	EXP 	text_2: autoDraw = False
+496.4261 	EXP 	text_2: autoDraw = False
+496.4261 	EXP 	text_2: autoDraw = True
+497.4157 	EXP 	New trial (rep=0, index=81): <Trial 81 (81 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 81, 'thisTrialN': 81, 'thisRepN': 0}>
+500.7137 	EXP 	text_2: autoDraw = False
+500.7137 	EXP 	text_2: autoDraw = False
+500.7137 	EXP 	text_2: autoDraw = True
+501.7009 	EXP 	New trial (rep=0, index=82): <Trial 82 (82 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 82, 'thisTrialN': 82, 'thisRepN': 0}>
+505.1000 	EXP 	text_2: autoDraw = False
+505.1000 	EXP 	text_2: autoDraw = False
+505.1000 	EXP 	text_2: autoDraw = True
+506.0946 	EXP 	New trial (rep=0, index=83): <Trial 83 (83 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 83, 'thisTrialN': 83, 'thisRepN': 0}>
+509.4222 	EXP 	text_2: autoDraw = False
+509.4222 	EXP 	text_2: autoDraw = False
+509.4222 	EXP 	text_2: autoDraw = True
+510.4082 	EXP 	New trial (rep=0, index=84): <Trial 84 (84 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 84, 'thisTrialN': 84, 'thisRepN': 0}>
+513.6933 	EXP 	text_2: autoDraw = False
+513.6933 	EXP 	text_2: autoDraw = False
+513.6933 	EXP 	text_2: autoDraw = True
+514.6957 	EXP 	New trial (rep=0, index=85): <Trial 85 (85 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 85, 'thisTrialN': 85, 'thisRepN': 0}>
+517.9603 	EXP 	text_2: autoDraw = False
+517.9603 	EXP 	text_2: autoDraw = False
+517.9603 	EXP 	text_2: autoDraw = True
+518.9493 	EXP 	New trial (rep=0, index=86): <Trial 86 (86 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 86, 'thisTrialN': 86, 'thisRepN': 0}>
+521.7634 	EXP 	text_2: autoDraw = False
+521.7634 	EXP 	text_2: autoDraw = False
+521.7634 	EXP 	text_2: autoDraw = True
+522.7570 	EXP 	New trial (rep=0, index=87): <Trial 87 (87 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 87, 'thisTrialN': 87, 'thisRepN': 0}>
+525.5864 	EXP 	text_2: autoDraw = False
+525.5864 	EXP 	text_2: autoDraw = False
+525.5864 	EXP 	text_2: autoDraw = True
+526.5717 	EXP 	New trial (rep=0, index=88): <Trial 88 (88 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 88, 'thisTrialN': 88, 'thisRepN': 0}>
+529.5711 	EXP 	text_2: autoDraw = False
+529.5711 	EXP 	text_2: autoDraw = False
+529.5711 	EXP 	text_2: autoDraw = True
+530.5581 	EXP 	New trial (rep=0, index=89): <Trial 89 (89 in rep 0) data={'ISI_duration': 1.0, 'stim_number': None, 'thisN': 89, 'thisTrialN': 89, 'thisRepN': 0}>
+533.8934 	EXP 	text_2: autoDraw = False
+533.8934 	EXP 	text_2: autoDraw = False
+533.8934 	EXP 	text_2: autoDraw = True
+534.8940 	EXP 	text_2: autoDraw = False
+534.8940 	EXP 	text_2: autoDraw = False
+534.8940 	EXP 	text_3: autoDraw = True
+544.9002 	EXP 	text_3: autoDraw = False
+544.9020 	EXP 	untitled: status = STOPPED
+544.9268 	INFO 	saved data to 'C:\\Users\\tue.vu_pison\\Desktop\\git\\dataops_tools\\auditory_change_task\\data/781994_untitled_2024-11-12_13h56.41.533.csv'
+545.1060 	INFO 	saved data to C:\Users\tue.vu_pison\Desktop\git\dataops_tools\auditory_change_task\data/781994_untitled_2024-11-12_13h56.41.533.psydat
+545.4588 	DEBUG 	Saving data for untitled ExperimentHandler
