@@ -33,14 +33,19 @@ if os.path.exists(filename):
 
 win = visual.Window([800, 600], color='black', units='norm')
 
-feedback_text = visual.TextStim(win, text='', pos=(0, 0), color='white', height=0.1)
+# Removed textual feedback text stimulus
+# feedback_text = visual.TextStim(win, text='', pos=(0, 0), color='white', height=0.1)
+
 debug_text = visual.TextStim(win, text='', pos=(-0.9, -0.9), color='white', height=0.05,
                              anchorHoriz='left', anchorVert='bottom', units='norm')
 stage_level_text = visual.TextStim(win, text='', pos=(0.9, -0.9), color='white',
                                    height=0.05, anchorHoriz='right', anchorVert='bottom',
                                    units='norm')
-timer_text = visual.TextStim(win, text='', pos=(0, 0.8), color='white', height=0.05,
+timer_text = visual.TextStim(win, text='', pos=(0, 0.8), color='white', height=0.075,
                              units='norm')
+
+# ADDED: Polygon for feedback under the stimuli area. Default color = gray
+feedback_polygon = visual.Rect(win, width=0.5, height=0.05, fillColor='gray', lineColor='gray', pos=(0, -0.28))
 
 kb = keyboard.Keyboard()
 
@@ -90,7 +95,6 @@ try:
             stage = stage_numbers[stage_index]
             stage_params = stages[stage]
 
-            # Set threshold at the start of each stage
             if stage == 1:
                 threshold = 90
             else:
@@ -148,7 +152,6 @@ try:
                 minutes = int(remaining_time) // 60
                 seconds = int(remaining_time) % 60
 
-                # Compute scored_accuracy
                 if trial_counter > n_back:
                     scored_correct = sum(trial_correctness[n_back:]) if len(trial_correctness) > n_back else 0
                     scored_total = trial_counter - n_back
@@ -156,12 +159,10 @@ try:
                 else:
                     scored_accuracy = 100
 
-                # Update timer_text to include trial count for the current stage
                 timer_text.setText(
                     f"Time Remaining: {minutes}:{seconds:02d}\n"
                     f"Trials: {trial_counter}/{total_stage_trials}\n"
-                    f"Scored Accuracy: {scored_accuracy:.2f}%\n"
-                    f"Target Accuracy: {threshold}%"
+                    f"Accuracy: {scored_accuracy:.2f}% / {threshold}%\n"
                 )
 
                 if elapsed_time >= end_time:
@@ -191,7 +192,6 @@ try:
                 rt = None
                 response_made = False
 
-                # Compute scored accuracy for debug if debug_enabled
                 if trial_counter > n_back:
                     scored_correct = sum(trial_correctness[n_back:]) if len(trial_correctness) > n_back else 0
                     scored_total = trial_counter - n_back
@@ -212,14 +212,18 @@ try:
                         f"ISI: {min_ISI:.2f}-{max_ISI:.2f}s"
                     )
                 else:
-                    debug_text.setText('')  # Clear debug text if not enabled
+                    debug_text.setText('')
 
+                # Draw stimulus
                 stim_clock = core.Clock()
                 kb.clock.reset()
 
-                # Draw stimuli
+                # Ensure feedback polygon is gray at the start of the trial
+                feedback_polygon.fillColor = 'gray'  # CHANGED: reset to gray at trial start
+                
                 while stim_clock.getTime() < stim_duration:
                     stim.draw()
+                    feedback_polygon.draw()  # ADDED: Draw polygon
                     if debug_enabled:
                         debug_text.draw()
                     stage_level_text.draw()
@@ -257,7 +261,6 @@ try:
                         minutes = int(remaining_time) // 60
                         seconds = int(remaining_time) % 60
 
-                        # Compute scored accuracy again
                         if trial_counter > n_back:
                             scored_correct = sum(trial_correctness[n_back:]) if len(trial_correctness) > n_back else 0
                             scored_total = trial_counter - n_back
@@ -268,8 +271,7 @@ try:
                         timer_text.setText(
                             f"Time Remaining: {minutes}:{seconds:02d}\n"
                             f"Trials: {trial_counter}/{total_stage_trials}\n"
-                            f"Scored Accuracy: {scored_accuracy:.2f}%\n"
-                            f"Target Accuracy: {threshold}%"
+                            f"Accuracy: {scored_accuracy:.2f}% / {threshold}%\n"
                         )
 
                         if debug_enabled:
@@ -287,6 +289,8 @@ try:
                         else:
                             debug_text.setText('')
 
+                        # Draw polygon (still gray here if no response yet)
+                        feedback_polygon.draw()
                         if debug_enabled:
                             debug_text.draw()
                         timer_text.draw()
@@ -344,7 +348,6 @@ try:
 
                 trial_correctness.append(correct)
 
-                # Check if it's still possible to achieve threshold accuracy
                 if trial_counter > n_back:
                     scored_correct = sum(trial_correctness[n_back:])
                     scored_total = trial_counter - n_back
@@ -352,8 +355,7 @@ try:
                         scored_accuracy = (scored_correct / scored_total) * 100
                     else:
                         scored_accuracy = 100
-
-                    # Calculate if threshold is still achievable
+                    # Check if max possible accuracy < threshold
                     trials_left = total_stage_trials - trial_counter
                     max_possible_scored_correct = scored_correct + trials_left
                     max_possible_scored_total = scored_total + trials_left
@@ -367,11 +369,15 @@ try:
                         ended_early = True
                         break
 
+                # Show feedback via polygon color during ISI if show_feedback is True
+                # CHANGED: Instead of textual feedback, change polygon color
                 if show_feedback:
-                    feedback_msg = 'Correct!' if correct else 'Incorrect!'
-                    feedback_text.setText(feedback_msg)
                     ISI_clock = core.Clock()
                     kb.clock.reset()
+                    
+                    # If correct is True => green, else red
+                    feedback_polygon.fillColor = 'green' if correct else 'red'
+                    feedback_polygon.lineColor = 'green' if correct else 'red'
 
                     while ISI_clock.getTime() < ISI_trial:
                         elapsed_time = global_clock.getTime()
@@ -389,8 +395,7 @@ try:
                         timer_text.setText(
                             f"Time Remaining: {minutes}:{seconds:02d}\n"
                             f"Trials: {trial_counter}/{total_stage_trials}\n"
-                            f"Scored Accuracy: {scored_accuracy:.2f}%\n"
-                            f"Target Accuracy: {threshold}%"
+                            f"Accuracy: {scored_accuracy:.2f}% / {threshold}%\n"
                         )
 
                         if debug_enabled:
@@ -408,7 +413,7 @@ try:
                         else:
                             debug_text.setText('')
 
-                        feedback_text.draw()
+                        feedback_polygon.draw()  # The polygon now shows green or red
                         if debug_enabled:
                             debug_text.draw()
                         stage_level_text.draw()
@@ -426,18 +431,18 @@ try:
                             continue_task = False
                             break
 
+                    # After feedback ISI, revert polygon to gray
+                    feedback_polygon.fillColor = 'gray'
+                    feedback_polygon.lineColor = 'gray'
+
                 data_writer.writerow([stage, trial_number_global, n_back, current_color, response, correct, rt])
                 data_file.flush()
                 print(f"Trial {trial_number_global}: Data recorded.")
 
-            # After completing all trials in this stage (or breaking early)
             if not continue_task:
                 break
 
             if ended_early:
-                # If we ended the stage early because it's impossible to meet threshold,
-                # no need to calculate final accuracy again or move forward.
-                # We will treat it as failing the stage.
                 scored_correct = sum(trial_correctness[n_back:]) if len(trial_correctness) > n_back else 0
                 scored_total = (trial_counter - n_back) if trial_counter > n_back else 0
                 if scored_total > 0:
@@ -448,13 +453,11 @@ try:
                 total_trials = trial_counter
                 total_correct = correct_responses + correct_nonresponses
 
-                # Overall accuracy (all trials)
                 if total_trials > 0:
                     overall_accuracy = (total_correct / total_trials) * 100
                 else:
                     overall_accuracy = 100
 
-                # Scored accuracy (exclude first n_back)
                 if total_trials > n_back:
                     scored_correct = sum(trial_correctness[n_back:])
                     scored_total = total_trials - n_back
@@ -466,20 +469,14 @@ try:
                 print(f"Overall Accuracy (all trials): {overall_accuracy:.2f}%")
                 print(f"Scored Accuracy (excluding first {n_back} trials): {scored_accuracy:.2f}%")
 
-            # Using the same threshold logic to advance/regress stages
             if scored_accuracy >= threshold:
-                # Passed the stage
                 if stage_index < len(stage_numbers) - 1:
                     stage_index += 1
                 else:
                     continue_task = False
             else:
-                # Did not pass
                 if stage_index > 0:
                     stage_index -= 1
-                else:
-                    # Repeat the same stage
-                    pass
 
         final_message = visual.TextStim(
             win,
