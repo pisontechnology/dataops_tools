@@ -1,0 +1,10 @@
+rest_start
+rest_end
+focus_start
+focus_end
+agility_start
+agility_end
+choice_start
+choice_end
+recognition_start
+recognition_end
