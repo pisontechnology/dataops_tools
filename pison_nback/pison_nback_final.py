@@ -10,7 +10,8 @@ import math
 # ---------------------------
 exp_info = {
     'Participant ID': '',
-    'Show Debug': True  # Checkbox for debug text display
+    'Show Debug': True,   # Checkbox for debug text display
+    'Starting Stage': '1' # <--- NEW input for stage
 }
 dialog = gui.DlgFromDict(dictionary=exp_info, title='N-back Task')
 if not dialog.OK:
@@ -22,6 +23,16 @@ if not participant_id:
     core.quit()
 
 debug_enabled = exp_info['Show Debug']
+
+# Convert the Starting Stage input to an integer and ensure it's valid
+try:
+    starting_stage = int(exp_info['Starting Stage'])
+except ValueError:
+    print("Error: Starting Stage must be an integer.")
+    core.quit()
+if starting_stage < 1:
+    print("Error: Starting Stage must be 1 or greater.")
+    core.quit()
 
 data_dir = "./data"  # Adjust as needed
 if not os.path.exists(data_dir):
@@ -36,12 +47,11 @@ if os.path.exists(filename):
 win = visual.Window([800, 600], color='black', units='norm')
 
 # === ADD A BACKGROUND IMAGE STIMULUS HERE ===
-# Make sure "background.png" is in the same directory, or provide a correct path.
 bg_image = visual.ImageStim(
     win,
     image="./background.png",  # Replace with path if not in same folder
     units='norm',
-    size=(2, 2)                # (2,2) in norm units typically fills the entire window
+    size=(2, 2)
 )
 
 debug_text = visual.TextStim(
@@ -65,7 +75,8 @@ kb = keyboard.Keyboard()
 
 colors_available = ['orange', 'blue', 'yellow']  # base set of colors
 
-def generate_stages(total_stages=13):
+def generate_stages(total_stages=25):
+    """Generate a dictionary of stage parameters."""
     stages = {}
     # Initial parameters
     c = 2
@@ -135,8 +146,18 @@ def generate_stages(total_stages=13):
     return stages
 
 stages = generate_stages(total_stages=13)
-stage_numbers = list(stages.keys())
+stage_numbers = list(stages.keys())  # e.g., [1, 2, 3, ... 13]
+
+# Validate that the requested starting_stage is within our total number of stages
+if starting_stage not in stage_numbers:
+    print(f"Error: Starting Stage {starting_stage} is invalid (must be between 1 and {max(stage_numbers)}).")
+    core.quit()
+
+# Convert the stage to an index
+stage_index = stage_numbers.index(starting_stage)
+
 print(f"Stage order: {stage_numbers}")
+print(f"Starting at stage {starting_stage} (which is index {stage_index} in the stage list).")
 
 response_key = 'space'
 quit_key = 'escape'
@@ -154,7 +175,6 @@ try:
 
         continue_task = True
         prev_n_back = None
-        stage_index = 0
         threshold = 75  # Fixed threshold for all stages
 
         while stage_index < len(stage_numbers):
@@ -182,7 +202,6 @@ try:
                     color='white',
                     height=0.07
                 )
-                # Draw instruction text on top of background
                 bg_image.draw()
                 instruction_text.draw()
                 win.flip()
@@ -245,7 +264,6 @@ try:
                 else:
                     scored_accuracy = 100
 
-                # We reduced what's displayed in timer_text for brevity
                 timer_text.setText(
                     f"Time Remaining: {minutes}:{seconds:02d}\n"
                 )
@@ -307,9 +325,7 @@ try:
                 # Stimulus Loop
                 # -------------
                 while stim_clock.getTime() < stim_duration and continue_task:
-                    # Draw background first
                     bg_image.draw()
-                    # Then draw other stimuli
                     stim.draw()
                     mistakes_text.draw()
                     if debug_enabled:
@@ -337,11 +353,7 @@ try:
                 if not continue_task:
                     break
 
-                # -------------------------------------------------------------
-                # REMOVED THE EXTRA flip() HERE that can cause flicker:
-                # win.flip()
-                # -------------------------------------------------------------
-
+                # Random ISI
                 ISI_trial = random.uniform(min_ISI, max_ISI)
 
                 # ----------------
@@ -391,7 +403,6 @@ try:
                                 f"Target Accuracy: {threshold}%"
                             )
 
-                        # Draw background, then text
                         bg_image.draw()
                         if debug_enabled:
                             debug_text.draw()
@@ -508,7 +519,6 @@ try:
                             f'Stage: {stage}\n N-back: {n_back} \n Errors allowed: {allowed_mistakes}'
                         )
 
-                        # Draw background and feedback info
                         bg_image.draw()
                         if debug_enabled:
                             debug_text.draw()
