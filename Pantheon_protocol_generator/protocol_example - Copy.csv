@@ -1,0 +1,10 @@
+class_name,activeClass_name,inactive_duration,active_duration,preamble,epilogue,repetitions
+protocol,test1,,,test,test,
+REST,REST,500,4000,"This is a rest gesture, just keep your arm in this posture ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/REST.mp4)",test,1
+Full Hand Extension Hold,FHEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/FHEH.mp4),test,5
+Index Extension Hold,INEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/INEH.mp4),test,5
+Thumb Extension Hold,TEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/TEH.mp4),test,5
+protocol,test2,,,test,test,
+Full Hand Extension Hold,FHEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/FHEH.mp4),test,5
+Index Extension Hold,INEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/INEH.mp4),test,5
+Thumb Extension Hold,TEH,750,3000,Please perform the gestures and hold it for approximately 1 second ![](https://storage.googleapis.com/pison_dataops/pantheon_vids/TEH.mp4),test,5
