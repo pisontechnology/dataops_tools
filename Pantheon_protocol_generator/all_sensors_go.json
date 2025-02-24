@@ -1,0 +1,52 @@
+{
+ "name": "ALL_SENSORS_GO",
+ "active": true,
+ "classes": [
+  {
+   "class": "ALL_SENSORS_GO",
+   "intervals": [
+    {
+     "label": "inactive",
+     "durationInMillis": "1000"
+    },
+    {
+     "label": "sleep",
+     "durationInMillis": "36000000"
+    },
+    {
+     "label": "inactive",
+     "durationInMillis": "1000"
+    }
+   ]
+  }
+ ],
+ "randomClassOrder": false,
+ "group": "hardware_testing",
+ "disconnectDeviceOnFinish": true,
+ "expectedDeviceTypes": [
+  {
+   "sensorConfigurations": [
+    {
+     "sensorType": "SENSOR_TYPE_EMG",
+     "samplingRate": 800
+    },
+    {
+     "sensorType": "SENSOR_TYPE_GYROSCOPE",
+     "samplingRate": 800
+    },
+    {
+     "sensorType": "SENSOR_TYPE_ACCELEROMETER",
+     "samplingRate": 800,
+     "brief": "16g"
+    },
+    {
+     "sensorType": "SENSOR_TYPE_PHOTOPLETHYSMOGRAPHY",
+     "samplingRate": 40
+    }
+   ]
+  }
+ ],
+ "image": "",
+ "type": "UNKNOWN",
+ "onsetCalculator": "UNKNOWN"
+}
